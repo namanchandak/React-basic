@@ -2,11 +2,18 @@
 import './App.css';
 // import About from './components/About';
 import Navbar from './components/Navbar';
-// import About from './components/About';
+import About from './components/About';
 import Textform from './components/Textform';
 // let na="naman"
 import React,{useState} from 'react'
 import Alert from './components/Alert';
+
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route
+//   // Link
+// } from "react-router-dom";
 
 
 function App() {
@@ -47,13 +54,54 @@ function App() {
     <>
     
       
-      
+        {/* <Router> */}
 <Navbar title="TextUtils" abouttext="About Us" mode={mode} toggleMode={toggleMode}/>
 {/* <Navbar /> */}
 <Alert alert={alert}/>
 <div className="contanier my-8">
-<Textform heading="Enter text to analyse" mode={mode} showalert={showalert}/>  
+
+<Textform heading="Enter text to analyse" mode={mode} showalert={showalert}/>
+
+
+
+{/* <Routes> */}
+
+
+
+        {/* <Route exact path="/" element={<Textform heading="Enter text to analyse" mode={mode} showalert={showalert}/>}/>
+          <Route exact path="/about" element={<About/>}/> */}
+
+
+
+
+
+
+
+
+          {/* <Route  path="/about" >
+          <About/>
+
+          </Route>
+
+
+
+
+          <Route path="/" >
+          <Textform heading="Enter text to analyse" mode={mode} showalert={showalert}/>  
+          </Route> */}
+          {/* <Route exact path="/login" element={<about/>}/> */}
+          {/* <Route exact path="/recovery-password" element={<RecoveryPassword/>}/> */}
+          {/* <Route path="*" element={<NotFound/>}/> */}
+    {/* </Routes> */}
+
+
+
+
+
+
+{/* <Textform heading="Enter text to analyse" mode={mode} showalert={showalert}/>   */}
 </div>
+{/* </Router> */}
 
 {/* <About/> */}
 {/* <About></About> */}
