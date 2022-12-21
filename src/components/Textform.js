@@ -33,7 +33,7 @@ export default function Textform(props) {
   const extra=()=>{
     console.log("extra");
     var newtext=text.split(/[ ]+/)
-    settext(newtext.join( " "))
+    settext(newtext.join(" "))
 
     
   }
@@ -53,23 +53,23 @@ export default function Textform(props) {
   // settext('new text here');
   return (
     <>
-    <div className='container' style={{color:  props.mode==='light'?'black':'white'}}>
-        <h1>{props.heading} </h1>
+    <div className='container my-3' style={{color:  props.mode==='light'?'black':'white'}}>
+        <h1 >{props.heading} </h1>
         
   {/* <label for="myBox" class="form-label">Example textarea</label> */}
   <div className='mb-10'>
-  <textarea className="form-control" value={text} style={{backgroundColor:  props.mode==='light'?'white':'#042743', color:  props.mode==='light'?'black':'white'  }} onChange={handleOnChange} id="myBox" rows="9"></textarea>
+  <textarea className="form-control my-1" value={text} style={{backgroundColor:  props.mode==='light'?'white':'#042743', color:  props.mode==='light'?'black':'white'  }} onChange={handleOnChange} id="myBox" rows="9"></textarea>
   </div>
-  <button className="btn btn-primary mx-2" onClick={handleClick}>convert to Uppercase</button>
+  <button disabled={text.length===0} className="btn btn-primary  mx-1 my-1 " onClick={handleClick}>convert to Uppercase</button>
   
-  <button className="btn btn-primary" onClick={handleClick2}>convert to lowercase</button>
+  <button disabled={text.length===0} className="btn btn-primary mx-1 my-1 " onClick={handleClick2}>convert to lowercase</button>
 
-  <button className="btn btn-primary" onClick={tonum}>convert to integer</button>
+  <button disabled={text.length===0} className="btn btn-primary mx-1 my-1 " onClick={tonum}>convert to integer</button>
 
 
-  <button className="btn btn-primary" onClick={copyh}>copy text</button>
+  <button disabled={text.length===0} className="btn btn-primary mx-1 my-1 " onClick={copyh}>copy text</button>
 
-  <button className="btn btn-primary" onClick={extra}>remove spaces</button>
+  <button disabled={text.length===0} className="btn btn-primary mx-1 my-1 " onClick={extra}>remove spaces</button>
 
 </div>
 
@@ -77,10 +77,10 @@ export default function Textform(props) {
   <h1>your text summary </h1>
 
   <p>
-    {text.split(" ").length} wored are here  {text.length}
+    {text.split(" ").filter((element)=>{return element.length!==0}).length} words are here  {text.length}
   </p>
   <p>
-    {0.08 *text.split(" ").length }minutes to read
+    {0.08 *text.split(" ").filter((element)=>{return element.length!==0}).length }minutes to read
   </p>
   <h2>
     preview

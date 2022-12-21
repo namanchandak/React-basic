@@ -1,39 +1,47 @@
 import React,{useState} from 'react'
 
-export default function About() {
+export default function About(props) {
 
-    const [myStyle, setletMyStyle] = useState({
-        color: 'black',
-        backgroundColor: 'white'
-    })
+    let myStyle={
+        color:props.mode==='dark'?'white':'#042743',
+        backgroundColor :props.mode==='dark'?'#042743':'white'
+
+   }
+
+
+
+    // const [myStyle, setletMyStyle] = useState({
+    //     color: 'black',
+    //     backgroundColor: 'white'
+    // })
     
 
-    const [btnText, setBtnText] = useState("enable dark mode")
+    // const [btnText, setBtnText] = useState("enable dark mode")
 
 
-    const toggleStyle=()=> {
-        if(myStyle.color==='black')
-        {
-            setletMyStyle({ 
-                    color: 'white',
-            backgroundColor: 'black', 
-            border : '1px solid white'
-            })
+    // const toggleStyle=()=> {
+    //     if(myStyle.color==='black')
+    //     {
+    //         setletMyStyle({ 
+    //                 color: 'white',
+    //         backgroundColor: 'black', 
+    //         border : '1px solid white'
+    //         })
 
-            setBtnText("enable light mode")
-        }
-        else
-        {
+    //         setBtnText("enable light mode")
+    //     }
+    //     else
+    //     {
 
-            setletMyStyle({
-                color: 'black',
-        backgroundColor: 'white'
-        })
+    //         setletMyStyle({
+    //             color: 'black',
+    //     backgroundColor: 'white'
+    //     })
 
-        setBtnText("enable dark mode")
+    //     setBtnText("enable dark mode")
 
-        }
-    } 
+    //     }
+    // } 
 
 
   return (
@@ -88,7 +96,7 @@ export default function About() {
 
 
         </p>
-        <button onClick={toggleStyle} type="button" className="btn btn-dark">{btnText}</button>
+        {/* <button onClick={toggleStyle} type="button" className="btn btn-dark">{btnText}</button> */}
     </div>
   )
 }
