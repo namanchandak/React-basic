@@ -103,7 +103,7 @@ function App() {
 </div>
 {/* </Router> */}
 
-{/* <About/> */}
+<About/>
 {/* <About></About> */}
 
 
